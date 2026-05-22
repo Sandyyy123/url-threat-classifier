@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>URL Threat Classifier — Sandeep Grover</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
@@ -42,93 +41,31 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:.82rem;border
 </style>
 </head>
 <body>
-
 <nav>
   <a href="https://sandyyy123.github.io" class="nav-back">← Portfolio</a>
   <span class="nav-title">URL Threat Classifier</span>
   <a href="https://github.com/Sandyyy123/url-threat-classifier" target="_blank" class="nav-back" style="margin-left:auto">GitHub ↗</a>
 </nav>
-
 <div class="hero">
   <h1>URL Threat Classifier</h1>
   <p>Real-time malicious URL detection: 33 lexical/structural features, XGBoost + LR ensemble, FastAPI endpoint with sub-50ms inference latency.</p>
   <div class="badges"><span class="badge">XGBoost</span> <span class="badge">FastAPI</span> <span class="badge">PhishTank</span></div>
   <div class="metric-bar">✦ 97.3% accuracy · FPR 0.4% · &lt;50ms latency</div>
 </div>
-
 <div class="card">
   <div class="section-title">Interactive Demo</div>
   <div class="highlight">97.3% accuracy | FPR 0.4% | <50ms latency | 33 features</div>
   <p style="font-size:.82rem;color:#94a3b8;margin-bottom:16px">URL Threat Classifier - Live Demo</p>
-  <div class="demo-container"><ul class='classifier-list'>
-<li class="clf-item">
-  <div class="clf-url">http://paypa1-secure.login.ru/verify</div>
-  <div class="clf-result">
-    <span class="clf-badge MALICIOUS">MALICIOUS</span>
-    <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px">
-      <div style="width:98%;height:100%;background:#f87171;border-radius:4px;transition:width .5s"></div>
-    </div>
-    <span style="font-size:.75rem;color:#94a3b8">0.987</span>
-  </div>
-  <div class="clf-reason" style="margin-top:5px">Homoglyph (paypa1), suspicious TLD, login phishing path</div>
-</li>
-<li class="clf-item">
-  <div class="clf-url">https://accounts.google.com/signin</div>
-  <div class="clf-result">
-    <span class="clf-badge SAFE">SAFE</span>
-    <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px">
-      <div style="width:2%;height:100%;background:#6ee7b7;border-radius:4px;transition:width .5s"></div>
-    </div>
-    <span style="font-size:.75rem;color:#94a3b8">0.021</span>
-  </div>
-  <div class="clf-reason" style="margin-top:5px">Trusted domain, HTTPS, standard auth path</div>
-</li>
-<li class="clf-item">
-  <div class="clf-url">http://free-gift-card.tk/claim?id=user123</div>
-  <div class="clf-result">
-    <span class="clf-badge MALICIOUS">MALICIOUS</span>
-    <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px">
-      <div style="width:97%;height:100%;background:#f87171;border-radius:4px;transition:width .5s"></div>
-    </div>
-    <span style="font-size:.75rem;color:#94a3b8">0.974</span>
-  </div>
-  <div class="clf-reason" style="margin-top:5px">Free-gift keyword, .tk TLD, claim path</div>
-</li>
-<li class="clf-item">
-  <div class="clf-url">https://github.com/Sandyyy123/url-threat-classifier</div>
-  <div class="clf-result">
-    <span class="clf-badge SAFE">SAFE</span>
-    <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px">
-      <div style="width:0%;height:100%;background:#6ee7b7;border-radius:4px;transition:width .5s"></div>
-    </div>
-    <span style="font-size:.75rem;color:#94a3b8">0.008</span>
-  </div>
-  <div class="clf-reason" style="margin-top:5px">Known safe domain, HTTPS, code repo path</div>
-</li>
-<li class="clf-item">
-  <div class="clf-url">http://192.168.1.1/admin/password-reset</div>
-  <div class="clf-result">
-    <span class="clf-badge SUSPICIOUS">SUSPICIOUS</span>
-    <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px">
-      <div style="width:61%;height:100%;background:#fbbf24;border-radius:4px;transition:width .5s"></div>
-    </div>
-    <span style="font-size:.75rem;color:#94a3b8">0.612</span>
-  </div>
-  <div class="clf-reason" style="margin-top:5px">IP-based URL, admin path, password reset</div>
-</li></ul></div>
+  <div class="demo-container"><ul class='classifier-list'><li class="clf-item"><div class="clf-url">http://paypa1-secure.login.ru/verify</div><div class="clf-result"><span class="clf-badge MALICIOUS">MALICIOUS</span><div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px"><div style="width:98%;height:100%;background:#f87171;border-radius:4px"></div></div><span style="font-size:.75rem;color:#94a3b8">0.987</span></div><div class="clf-reason" style="margin-top:5px">Homoglyph (paypa1), suspicious TLD, login phishing path</div></li><li class="clf-item"><div class="clf-url">https://accounts.google.com/signin</div><div class="clf-result"><span class="clf-badge SAFE">SAFE</span><div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px"><div style="width:2%;height:100%;background:#6ee7b7;border-radius:4px"></div></div><span style="font-size:.75rem;color:#94a3b8">0.021</span></div><div class="clf-reason" style="margin-top:5px">Trusted domain, HTTPS, standard auth path</div></li><li class="clf-item"><div class="clf-url">http://free-gift-card.tk/claim?id=user123</div><div class="clf-result"><span class="clf-badge MALICIOUS">MALICIOUS</span><div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px"><div style="width:97%;height:100%;background:#f87171;border-radius:4px"></div></div><span style="font-size:.75rem;color:#94a3b8">0.974</span></div><div class="clf-reason" style="margin-top:5px">Free-gift keyword, .tk TLD, claim path</div></li><li class="clf-item"><div class="clf-url">https://github.com/Sandyyy123/url-threat-classifier</div><div class="clf-result"><span class="clf-badge SAFE">SAFE</span><div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px"><div style="width:0%;height:100%;background:#6ee7b7;border-radius:4px"></div></div><span style="font-size:.75rem;color:#94a3b8">0.008</span></div><div class="clf-reason" style="margin-top:5px">Known safe domain, HTTPS, code repo path</div></li><li class="clf-item"><div class="clf-url">http://192.168.1.1/admin/password-reset</div><div class="clf-result"><span class="clf-badge SUSPICIOUS">SUSPICIOUS</span><div style="flex:1;background:rgba(255,255,255,0.05);border-radius:4px;height:6px;max-width:200px"><div style="width:61%;height:100%;background:#fbbf24;border-radius:4px"></div></div><span style="font-size:.75rem;color:#94a3b8">0.612</span></div><div class="clf-reason" style="margin-top:5px">IP-based URL, admin path, password reset</div></li></ul></div>
   <div class="stats-grid"><div class="stat-box"><span class="stat-value">97.3%</span><span class="stat-label">Accuracy</span></div><div class="stat-box"><span class="stat-value">0.4%</span><span class="stat-label">False Positive Rate</span></div><div class="stat-box"><span class="stat-value"><50ms</span><span class="stat-label">Latency</span></div><div class="stat-box"><span class="stat-value">33</span><span class="stat-label">Features</span></div></div>
 </div>
-
 <div class="card">
   <div class="section-title">Tech Stack</div>
   <div class="badges" style="margin-bottom:0"><span class="badge">XGBoost</span> <span class="badge">FastAPI</span> <span class="badge">PhishTank</span></div>
 </div>
-
 <footer>
-  <p>Built by <a href="https://sandyyy123.github.io">Sandeep Grover</a> ·
-     <a href="https://github.com/Sandyyy123/url-threat-classifier" target="_blank">GitHub Repo</a> ·
-     <a href="https://linkedin.com/in/sandeep-grover-b3192a16" target="_blank">LinkedIn</a></p>
+  <p>Built by <a href="https://sandyyy123.github.io">Sandeep Grover</a> &nbsp;·&nbsp;
+     <a href="https://github.com/Sandyyy123/url-threat-classifier" target="_blank">View on GitHub</a></p>
 </footer>
-
 </body>
 </html>
