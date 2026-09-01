@@ -1,3 +1,7 @@
+> **⚠️ Proprietary — All Rights Reserved.** © 2026 Sandeep Grover. This repository is licensed to Sandeep Grover and may **not** be used, run, copied, modified, distributed, or used to train models without prior written permission. Public visibility does not grant a license. See [LICENSE](LICENSE).
+
+---
+
 # URL Threat Classifier
 
 Machine learning pipeline for detecting malicious URLs in real time. Built for integration into messaging applications, browser extensions, or email filters.
